@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <meta name="referrer" content="origin">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id='root'></div>
+  <script>
+    const root = document.getElementById('root')
+    const BASE_URL = 'http://www.cbr.ru/scripts/XML_daily.asp'
+
+    const render = () => {
+      root.textContent = "helloo"
+    }
+
+
+    (async function () {
+      const data = await fetch(BASE_URL, {
+        method: 'GET',
+       // mode: 'cors',
+        //cache: 'default',
+        headers: {
+          'Content-Type': 'text/html'
+        }
+      });
+      //const value = await data.json();
+
+     // console.log(value);
+    })()
+    render()
+
+  </script>
+</body>
+
+</html>
